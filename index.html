@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/graph (20241021111307).svg" width="300px" height="300px">
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/graph (20241021111307).svg" width="300px" height="300px">
+					<p style="font-size: 70px">$>10^{100}$</p>
+				</div>
+			</section>
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/initial guess (20241021112851).svg" width="600px" height="600px">
+				</div>
+			</section>
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/small neighborhood 2 (20241022073316).svg" width="600px" height="600px">
+				</div>
+			</section>
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/large neighborhood  (20241021113113).svg" width="600px" height="600px">
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/expert (20241022110443).svg" width="600px" height="600px">
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/neural network (20241022111032).svg" width="500px" height="500px"
+						style="margin-right: 80px;">
+					<p style="position: absolute; top: 170px; left: 360px;">learns from</p>
+					<img src="./resources/expert (20241022110443).svg" width="500px" height="500px">
+				</div>
+			</section>
+			<section data-auto-animate>
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/neural network (20241022111032).svg" width="500px" height="500px"
+						style="margin-right: 80px;">
+					<p style="position: absolute; top: 170px; left: 360px;">imitates an</p>
+					<img src="./resources/expert (20241022110443).svg" width="500px" height="500px">
+				</div>
+			</section>
+
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/trajectory step 1 (20241022125449).svg" width="600px" height="600px">
+				</div>
+			</section>
+
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/new neigborhood  (20241022125744).svg" width="600px" height="600px">
+				</div>
+			</section>
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/multi steps (20241022010300).svg" width="600px" height="600px">
+				</div>
+			</section>
+
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/ppppppp (20241022033210).svg" width="600px" height="600px">
+				</div>
+			</section>
+
+			<section data-transition="none">
+				<div
+					style="display: flex; flex-direction: row; font-size: 70px; justify-content: center; align-items: center;">
+					<img src="./resources/ml path (20241022010447).svg" width="600px" height="600px">
+				</div>
+			</section>
+
+			<section data-transition="zoom" style="font-size: 70px;">Learning a Large Neighborhood Search
+				Algorithm for
+				Mixed Integer Programs
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			controls: false,
+			progress: false,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+		});
+	</script>
+</body>
+
+</html>
