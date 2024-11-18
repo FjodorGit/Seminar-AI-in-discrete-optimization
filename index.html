@@ -467,9 +467,57 @@
 			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
 				<p data-id="eq">$$\theta_i = \mathbb{P}(a_i = 1\ |\ x_t, M) = \frac{1}{1 + \exp(-\lambda_i)}$$</p>
 			</section>
-			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
+			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in slide-out">
 				<p>$$P_{\theta_i}(a_i\ |\ x_t, M) \sim Ber(\theta_i)$$</p>
 				<p data-id="eq">$$\pi(a \ |\ x_t, M) = \prod^{K}_{i=1} \mathbb{P}_{\theta_i}(a_i\ |\ x_t, M)$$</p>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Training">
+				<h2>Training</h2>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Training">
+				<p style="margin-bottom: 50px;">$$\text{Training Set } \mathcal{D}_{train} = \{(M^{(j)},
+					x_{1:T_j}^{(j)},
+					a_{1:T_j}^{(j)})\}_{j = 1}^{N}$$
+				</p>
+				<p class="fragment">$M^{(j)} \text{ Training Problem}$
+				</p>
+				<p class="fragment">$x_{1:T_j}^{(j)} \text{ Assignments over time}$
+				</p>
+				<p class="fragment">$a_{1:T_j}^{(j)} \text{ Experts unassignment actions over time}$
+				</p>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Training">
+				<p style="">$\text{Minimize:}$</p>
+				<p data-id="eq" style="">$$-\sum_{j = 1}^{N} \sum_{t = 1}^{T_j} \log \pi_{\theta}(a_t^{(j)}\
+					|\
+					x_t^{(j)},
+					M_t^{(j)})$$</p>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Training">
+				<p style="">$\text{Minimize:}$</p>
+				<p data-id="eq" style="">$$-\sum_{j = 1}^{N} \sum_{t = 1}^{T_j} \log \underbrace{\pi_{\theta}(a_t^{(j)}\
+					|\
+					x_t^{(j)},
+					M_t^{(j)})}_{\text{probability of expert unassignment action}}$$</p>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Training">
+				<p style="">$\text{Minimize:}$</p>
+				<p data-id="eq" style="">$$-\sum_{j = 1}^{N} \underbrace{\sum_{t = 1}^{T_j} \log
+					\underbrace{\pi_{\theta}(a_t^{(j)}\
+					|\
+					x_t^{(j)},
+					M_t^{(j)})}_{\text{probability of expert unassignment action}}}_{\text{maximize over trajectory}}$$
+				</p>
+			</section>
+			<section data-transition="slide-in slide-out">
+				<p style="">$\text{Sampling}$</p>
+				<p style="">$\pi_{\theta}(a\ |\ M, x) \rightarrow a: \text{pull action from policy}$
+				</p>
+				<p style="margin-top: 60px; margin-bottom: 60px;">$\text{vs}$</p>
+				<p style="">$\text{Training}$</p>
+				<p style>$\text{Evaluate policy } \pi_{\theta}(a\ |\ M,x) \text{ at expert action } a_{expert}
+					$
+				</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Evaluation-Start">
 				<h2>Evaluation</h2>
