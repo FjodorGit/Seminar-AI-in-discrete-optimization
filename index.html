@@ -179,9 +179,12 @@
 				</div>
 			</section>
 			<section data-auto-animate data-auto-animate-id="learns-from-expert">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<h2 style="margin: 0px;">NNS</h2>
-					<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
+				<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+					<div
+						style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-right: 30px;">
+						<h2 style="margin: 0px;">NNS</h2>
+						<img src="./resources/NNS Network.svg" width="450px" height="450px" style="margin: 0px;">
+					</div>
 				</div>
 			</section>
 			<section data-auto-animate data-auto-animate-id="learns-from-expert">
@@ -189,7 +192,7 @@
 					<div
 						style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-right: 30px;">
 						<h2 style="margin: 0px;">NNS</h2>
-						<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
+						<img src="./resources/NNS Network.svg" width="450px" height="450px" style="margin: 0px;">
 					</div>
 					<p style="font-size: 65px; position: relative; top: 30px;">learns from</p>
 					<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -203,7 +206,7 @@
 					<div
 						style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-right: 30px;">
 						<h2 style="margin: 0px;">NNS</h2>
-						<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
+						<img src="./resources/NNS Network.svg" width="450px" height="450px" style="margin: 0px;">
 					</div>
 					<p style="font-size: 65px; position: relative; top: 30px;">inimiates an</p>
 					<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -213,10 +216,7 @@
 				</div>
 			</section>
 			<section data-auto-animate data-auto-animate-id="expert">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<h2 style="position: relative; margin-bottom: 40px; top: -5px;">Expert</h2>
-					<img src="./resources/Expert.svg" width="350px" height="350px" style="margin: 0px;">
-				</div>
+				<h2>Expert</h2>
 			</section>
 			<section data-auto-animate data-auto-animate-id="expert">
 				<img src="resources/Search Space Expert.svg" />
@@ -249,49 +249,34 @@
 				<h2>Expert</h2>
 				<p>Computes the best <em>unassignment action</em> by solving a modified MIP</p>
 			</section>
-			<section data-auto-animate data-auto-animate-id="NNS">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<h2 style="margin: 0px;">NNS</h2>
-					<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
-				</div>
+			<section data-auto-animate data-auto-animate-id="MDP" data-transition="slide-in none">
+				<h2 data-id="title">NNS</h2>
 			</section>
 			<section data-auto-animate data-auto-animate-id="MDP">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<h2 style="margin: 0px;">NNS</h2>
-					<p>not Reinforcement Learning</p>
-				</div>
+				<h2 data-id="title">NNS</h2>
+				<p>not Reinforcement Learning</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="MDP">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<h2 style="margin: 0px;">NNS</h2>
-					<p>via Markov Decision Processes</p>
-				</div>
+				<h2 data-id="title">NNS</h2>
+				<p data-id="subtitle">via Markov Decision Processes</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="MDP">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<h2 style="margin: 0px;">NNS</h2>
-					<p>via Markov Decision Processes</p>
-				</div>
+				<h2 data-id="title">NNS</h2>
+				<p data-id="subtitle" style="margin-top: 0;">via Markov Decision Processes $\mathcal{M}_z$</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="MDP">
 				<h2 style="margin: 0px;">NNS</h2>
 				<p style="margin-top: 0;">via Markov Decision Processes $\mathcal{M}_z$</p>
-				<p style="font-size: 45px;" class="fragment">$context\ z = \{A, b, c\}$</p>
-				<p style="font-size: 45px;" class="fragment">$state\ s_t = x_t$</p>
-				<p style="font-size: 45px;" class="fragment">$action\ a_t \in \{0, 1\}^n$</p>
-				<p style="font-size: 45px;" class="fragment">$learnable\ parameters\ \theta$</p>
-				<p style="font-size: 45px;" class="fragment">$policy\ \pi_{\theta}(a_t\ | s_t, z)$</p>
-				<p style="font-size: 45px;" class="fragment">$reward: primal\ gap$</p>
-			</section>
-			<section data-auto-animate data-auto-animate-id="NNS" data-transition="none">
-				<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-					<p style="margin: 0px; font-size: 50px;"><b>NNS with</b> $context\ z$</p>
-					<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
-				</div>
+				<p style="font-size: 45px;" class="fragment">$\text{context } z = \{A, b, c\}$</p>
+				<p style="font-size: 45px;" class="fragment">$\text{state } s_t = x_t$</p>
+				<p style="font-size: 45px;" class="fragment">$\text{action } a_t \in \{0, 1\}^n$</p>
+				<p style="font-size: 45px;" class="fragment">$\text{policy } \pi_{\theta}(a_t\ | s_t, z)$</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="NNS">
 				<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-					<p style="position: relative; top: 40px; margin-top: 0px; margin-right: 10px;">$state\ s_t$</p>
+					<p data-id="state" style="position: relative; top: 40px; margin-top: 0px; margin-right: 10px;">
+						$\text{state } s_t$
+					</p>
 					<svg data-id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="100px"
 						height="100px" style="position: relative; top: 40px; margin-left: 20px;">
 						<path style="fill:white"
@@ -299,14 +284,16 @@
 							data-name="Right" />
 					</svg>
 					<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-						<p style="margin: 0px; font-size: 50px;"><b>NNS with</b> $context\ z$</p>
+						<p style="margin: 0px; font-size: 50px;"><b>NNS with</b> $\text{context } z$</p>
 						<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
 					</div>
 				</div>
 			</section>
 			<section data-auto-animate data-auto-animate-id="NNS">
-				<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-					<p style="position: relative; top: 40px; margin-top: 0px; margin-right: 10px;">$state\ s_t$</p>
+				<div data-id="state"
+					style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+					<p style="position: relative; top: 40px; margin-top: 0px; margin-right: 10px;">$\text{state } s_t$
+					</p>
 					<svg data-id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="100px"
 						height="100px" style="position: relative; top: 40px; margin-left: 20px;">
 						<path style="fill:white"
@@ -314,7 +301,7 @@
 							data-name="Right" />
 					</svg>
 					<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-						<p style="margin: 0px; font-size: 50px;"><b>NNS with</b> $context\ z$</p>
+						<p style="margin: 0px; font-size: 50px;"><b>NNS with</b> $\text{context } z$</p>
 						<img src="./resources/NNS Network.svg" width="400px" height="400px" style="margin: 0px;">
 					</div>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="100px" height="100px"
@@ -324,7 +311,7 @@
 							data-name="Right" />
 					</svg>
 					<div style="display: flex; flex-direction: column; position: relative; top: 40px; left: 20px;">
-						<p style="margin-bottom: 0px;">$policy$</p>
+						<p style="margin-bottom: 0px;">$\text{policy }$</p>
 						<p style="margin-top: 0px;">$\pi_{\theta}(a_t\ | s_t, z)$</p>
 					</div>
 				</div>
@@ -487,8 +474,16 @@
 				</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Training">
-				<p style="">$\text{Minimize:}$</p>
 				<p data-id="eq" style="">$$-\sum_{j = 1}^{N} \sum_{t = 1}^{T_j} \log \pi_{\theta}(a_t^{(j)}\
+					|\
+					x_t^{(j)},
+					M_t^{(j)})$$</p>
+				<img src="./resources/qrcode.png" />
+				<p data-id="head">$\text{Minimize or Maximize this function?}$</p>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Training">
+				<p data-id="head">$\text{Minimize:}$</p>
+				<p data-id="eq" style="">$$L(\theta) = -\sum_{j = 1}^{N} \sum_{t = 1}^{T_j} \log \pi_{\theta}(a_t^{(j)}\
 					|\
 					x_t^{(j)},
 					M_t^{(j)})$$</p>
@@ -520,28 +515,44 @@
 				</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Evaluation-Start">
-				<h2>Evaluation</h2>
+				<h2 data-id="head">Evaluation</h2>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Evaluation-Start">
-				<h2>Evaluation</h2>
-				<p><em>homogenous</em> vs <em>heterogenous</em> Datasets</p>
+				<h2 data-id="head">Evaluation Dataset</h2>
+				<p><em>5 homogenous</em> and <em>1 heterogenous</em> Datasets</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Evaluation-Start">
-				<h2>Evaluation</h2>
-				<p><em>homogenous</em> vs <em>heterogenous</em> Datasets</p>
+				<h2 data-id="head">Evaluation Dataset</h2>
+				<p><em>5 homogenous</em> and <em>1 heterogenous</em> Datasets</p>
 				<p>seperate model for each Dataset</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Evaluation-Start">
-				<h2>Evaluation</h2>
-				<p><em>homogenous</em> vs <em>heterogenous</em> Datasets</p>
+				<h2 data-id="head">Evaluation Dataset</h2>
+				<p><em>5 homogenous</em> and <em>1 heterogenous</em> Datasets</p>
 				<p>seperate model for each Dataset</p>
 				<p>70% Training, 15% Validation, 15% Test Split</p>
+			</section>
+			<section data-auto-animate data-auto-animate-id="Evaluation-Start">
+				<h2 data-id="head">Evaluation Metric</h2>
+				<p>$\text{Primal Gap over time}$</p>
+				<p>$$\gamma(t) = \frac{|f(x_t) - f(x^{*})|}{\max \{|f(x_t)|, |f(x^{*})|\}}$$</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Baselines">
 				<h2>Baselines</h2>
 				<ol>
 					<li>Random Neighborhood Selection</li>
 				</ol>
+			</section>
+			<section data-transition="slide-in slide-out">
+				<p>
+					Does a random neighborhood search policy improve the runtime of a MIP solver?
+				</p>
+				<!-- Nope. No way -->
+				<!-- Maybe on some datasets ¯\_(ツ)_/¯ -->
+				<!-- Slightly but still less than NNS -->
+				<!-- As good as NNS -->
+				<!-- Better than NNS -->
+				<img src="resources/qrcode.png" />
 			</section>
 			<section data-auto-animate data-auto-animate-id="Baselines">
 				<h2>Baselines</h2>
