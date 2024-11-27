@@ -107,10 +107,6 @@
 				<h2>Expert</h2>
 			</section>
 			<section data-auto-animate data-auto-animate-id="expert">
-				<h2>Expert</h2>
-				<p>Computes the next best assignment in a given neighborhood by solving a modified MIP</p>
-			</section>
-			<section data-auto-animate data-auto-animate-id="expert">
 				<h2 data-id="title">Expert</h2>
 				<img data-id="img" src="resources/Expert Unassignment.svg" />
 			</section>
@@ -121,11 +117,14 @@
 			<section data-auto-animate data-auto-animate-id="expert">
 				<h2 data-id="title">Expert MIP</h2>
 				<p>$\text{MIP with additional contraint:}$</p>
-				<p>$\eta \in \mathbb{N} \text{ allowed changes}, \hat{x} \in \mathbb{R}^{n} \text{ previous assignment}$
+				<p>$\eta \in \mathbb{N} \text{ allowed changes}, \hat{x} \in \mathbb{R}^{n} \text{ current assignment}$
 				</p>
 				<p>$\sum_{\hat{x}_i = 0} \hat{x}_i + \sum_{\hat{x}_i = 1} (1 - \hat{x}_i) \leq \eta$</p>
 			</section>
-
+			<section data-auto-animate data-auto-animate-id="expert">
+				<h2>Expert</h2>
+				<p>Computes the next best assignment in a given neighborhood by solving a modified MIP</p>
+			</section>
 			<section data-auto-animate data-auto-animate-id="MDP" data-transition="slide-in none">
 				<h2>NNS</h2>
 			</section>
@@ -188,6 +187,9 @@
 				<img data-id="bip" src="./resources/Node Features Example 4.svg" style="margin: 0px;">
 			</section>
 			<section data-auto-animate data-auto-animate-id="Bipartite" data-transition="none">
+				<img data-id="bip" src="./resources/Node Features Example (1).svg" style="margin: 0px;">
+			</section>
+			<section data-auto-animate data-auto-animate-id="Bipartite" data-transition="none">
 				<img data-id="bip" src="./resources/Bipartite with features.svg" style="margin: 0px;">
 			</section>
 			<section data-auto-animate data-auto-animate-id="Bipartite" data-transition="none">
@@ -208,8 +210,8 @@
 			<section data-auto-animate data-auto-animate-id="Bipartite" data-transition="none">
 				<img data-id="bip" src="./resources/Bipartite with features 6.svg" style="margin: 0px;">
 			</section>
-			<section data-auto-animate data-auto-animate-id="Bipartite" data-transition="none">
-				<img data-id="bip" src="./resources/Bipartite with features 7.svg" style="margin: 0px;">
+			<section>
+				<p style="font-size: 50px;">This was one Graph Convolution Layer</p>
 			</section>
 			<section data-transition="none">
 				<h2>Now in Formulas</h2>
@@ -227,9 +229,8 @@
 			</section>
 			<section data-auto-animate>
 				<p data-id="feature-trans">$$\begin{bmatrix} f_1 \\ f_2 \\ \vdots \\ f_K\end{bmatrix} \longrightarrow
-					\text{row-wise MLP: } g_{\phi} \rightarrow \begin{bmatrix}
-					g_{\phi}(f_1)
-					\\ g_{\phi}(f_2) \\ \vdots \\ g_{\phi}(f_K)\end{bmatrix}$$
+					\text{row-wise MLP: } g_{\phi} \rightarrow
+					\begin{bmatrix} g_{\phi}(f_1) \\ g_{\phi}(f_2) \\ \vdots \\ g_{\phi}(f_K)\end{bmatrix}$$
 				</p>
 			</section>
 			<section data-auto-animate>
@@ -257,9 +258,9 @@
 				</div>
 			</section>
 			<section data-auto-animate>
-				<p data-id="feature-trans">$\begin{bmatrix} \text{new }f_1 \\ \text{new }f_2 \\ \text{new }f_3 \\
-					\text{new }f_4 \\ \text{new }f_5 \end{bmatrix} =
-					\mathcal{A} \times \begin{bmatrix} \hat{f_1} \\ \hat{f_2} \\ \hat{f_3} \\ \hat{f_4} \\ \hat{f_5}
+				<p data-id="feature-trans">$\begin{bmatrix} \text{new }f_1 \\ \text{new }f_2 \\ \vdots \\
+					\text{new }f_K \end{bmatrix} =
+					\mathcal{A} \times \begin{bmatrix} \hat{f_1} \\ \hat{f_2} \\ \vdots \\ \hat{f_K}
 					\end{bmatrix}$</p>
 			</section>
 			<section data-auto-animate>
@@ -275,7 +276,7 @@
 					\hat{f_3} \\ \hat{f_4} \\ \hat{f_5}
 					\end{bmatrix}$</p>
 			</section>
-			<section data-auto-animate>
+			<section data-transition="none">
 				<p data-id="feature-trans">$\begin{bmatrix} \text{new }f_1 \\ \text{new }f_2 \\ \text{new }f_3 \\
 					\text{new }f_4 \\ \text{new
 					}f_5\end{bmatrix} =
@@ -288,23 +289,8 @@
 					\end{bmatrix}$
 				</p>
 			</section>
-			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
-				<p style="font-size: 50px; margin-bottom: 50px;">In Short</p>
-				<p>$Z \text{ intermediate feature representation}$</p>
-				<p>$Z^{(0)} = U$</p>
-			</section>
-			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
-				<p style="font-size: 50px; margin-bottom: 50px;">$l\text{-Layer GCN}$</p>
-				<p>$Z \in \mathbb{R}^{K \times H^l} \text{ intermediate feature representation}$</p>
-				<p>$Z^{(0)} = U$</p>
-				<p>$Z^{(i+1)} = \mathcal{A} g_{\phi(l)}(Z^{(i)})$</p>
-			</section>
-			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
-				<p style="font-size: 50px; margin-bottom: 50px;">$l\text{-Layer GCN}$</p>
-				<p>$Z^{(0)} = U$</p>
-				<p>$Z^{(i+1)} = \mathcal{A} g_{\phi(l)}(Z^{(i)})$</p>
-				<p>$\cdots$</p>
-				<p>$Z^{(l)} = \mathcal{A} g_{\phi(l)}(Z^{(l - 1)})$</p>
+			<section data-auto-animate-id="Bipartite" data-transition="none">
+				<img data-id="bip" src="./resources/Bipartite with features 5.svg" style="margin: 0px;">
 			</section>
 			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
 				<p style="font-size: 50px; margin-bottom: 50px;">In Short</p>
@@ -328,7 +314,7 @@
 				<img src="./resources/Whole Architecture (2).svg" />
 			</section>
 			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
-				<p>$\lambda_i \text{ output of last MLP}$</p>
+				<p>$\lambda_i \in \mathbb{R} \text{ output of last MLP}$</p>
 				<p>$$\theta_i = \mathbb{P}(a_i = 1\ |\ x_t, M) = \frac{1}{1 + \exp(-\lambda_i)}$$</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
@@ -342,9 +328,6 @@
 			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
 				<p data-id="eq">$$\mathbb{P}(a_i = 1\ |\ x_t, M) = \frac{1}{1 + \exp(-\lambda_i)}$$</p>
 				<img data-id="sig" src="./resources/Sigmoid (2).svg" />
-			</section>
-			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in">
-				<p data-id="eq">$$\theta_i = \mathbb{P}(a_i = 1\ |\ x_t, M) = \frac{1}{1 + \exp(-\lambda_i)}$$</p>
 			</section>
 			<section data-auto-animate data-auto-animate-id="Network-Arch" data-transition="slide-in slide-out">
 				<p>$$P_{\theta_i}(a_i\ |\ x_t, M) \sim Ber(\theta_i)$$</p>
@@ -379,7 +362,7 @@
 			</section>
 			<section data-auto-animate data-auto-animate-id="Training">
 				<p style="">$\text{Minimize:}$</p>
-				<p data-id="eq" style="">$$\sum_{t = 1}^{T} \log \underbrace{\pi_{\theta}(a_t\ |\ x_t,
+				<p data-id="eq" style="">$$L(\theta) = -\sum_{t = 1}^{T} \log \underbrace{\pi_{\theta}(a_t\ |\ x_t,
 					M)}_{\text{probability of expert unassignment action}}$$</p>
 			</section>
 			<section data-transition="slide-in slide-out">
@@ -415,8 +398,11 @@
 				<h2 data-id="head">Evaluation Metric</h2>
 				<p>$\text{Primal Gap}$</p>
 				<p>$$\gamma = \frac{|f(x) - f(x^{*})|}{\max \{|f(x)|, |f(x^{*})|\}}$$</p>
-				<p style="margin: 0px;">$$f(x^{*}) \text{ best solution value}$$</p>
-				<p style="margin: 0px;">$$f(x) \text{ current solution value}$$</p>
+				<p style="margin: 0px;">$f(x^{*}) \text{ best solution value}$</p>
+				<p style="margin: 0px;">$f(x) \text{ current solution value}$</p>
+			</section>
+			<section data-transition="none">
+				<img src="./resources/gurobi_output.png" />
 			</section>
 			<section data-auto-animate data-auto-animate-id="Baselines">
 				<h2>Baselines</h2>
@@ -482,13 +468,6 @@
 					<img height="700px" src="./resources/paper_figures/MIPLIB_v3_no_legend_gap-1.png">
 				</div>
 			</section>
-			<section data-transition="none">
-				<div>
-					<img style="position: absolute; top: 161px; left: 553px;" height="196px"
-						src="./resources/paper_figures/legend_combo.png">
-					<img height="700px" src="./resources/paper_figures/MIPLIB_ablation_v3_no_legend_gap-1.png">
-				</div>
-			</section>
 			<section data-transition="slide-in none">
 				<div>
 					<img height="700px" src="./resources/paper_figures/elect_vs_expert.png">
@@ -498,9 +477,6 @@
 				<div>
 					<img height="700px" src="./resources/paper_figures/nnv_vs_expert.png">
 				</div>
-			</section>
-			<section data-auto-animate data-transition="slide-in none">
-				<h2>Neural IPS Competition</h2>
 			</section>
 			<section data-auto-animate data-transition="slide-in none">
 				<h2>Neural IPS Competition</h2>
@@ -517,129 +493,18 @@
 					<img height="700px" src="./resources/paper_figures/neurips21_item_placement_v2_legend_gap-1.png">
 				</div>
 			</section>
-
-
-			<section data-auto-animate data-transition="none">
-				<img style="" src="resources/Overview.png" />
-				<div data-id="cover_mip"
-					style="position: fixed; z-index:1; background-color: white; width: 180px; height: 230px; top: 200px; left: 50px;">
+			<section style="font-size: 50px;" data-transition="none">
+				<div style="margin: 30px">
+					Summery
 				</div>
-				<div data-id="cover_var"
-					style="position: fixed; z-index:1; background-color: white; width: 400px; height: 50px; top: 370px; left: 50px;">
-				</div>
-				<div data-id="cover_backarrow"
-					style="position: fixed; z-index:1; background-color: white; width: 1500px; height: 75px; top: 380px; left: 50px;">
-				</div>
-				<div data-id="MIP-text"
-					style="font-size: 70px; position: fixed; z-index:2; background-color: white; width: 90px; height: 100px; top: 250px; left: 100px; color: black">
-					MIP
-				</div>
-				<div data-id="crop_bottom"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 2000px; height: 100px; top: 600px; left: 0px;">
-				</div>
-				<div data-id="cover_flow"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 1200px; height: 700px; top: 0px; left: 595px;">
-				</div>
-			</section>
-			<section data-auto-animate data-transition="none">
-				<img style="" src="resources/Overview.png" />
-				<div data-id="cover_mip"
-					style="position: fixed; z-index:1; background-color: white; width: 180px; height: 230px; top: 200px; left: 50px;">
-				</div>
-				<div data-id="cover_var"
-					style="position: fixed; z-index:1; background-color: white; width: 400px; height: 50px; top: 370px; left: 50px;">
-				</div>
-				<div data-id="cover_backarrow"
-					style="position: fixed; z-index:1; background-color: white; width: 1500px; height: 75px; top: 380px; left: 50px;">
-				</div>
-				<div data-id="MIP-text"
-					style="font-size: 70px; position: fixed; z-index:2; background-color: white; width: 90px; height: 100px; top: 250px; left: 100px; color: black">
-					MIP
-				</div>
-				<div data-id="crop_bottom"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 2000px; height: 100px; top: 600px; left: 0px;">
-				</div>
-				<div data-id="cover_flow"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 800px; height: 700px; top: 0px; left: 1005px;">
-				</div>
-			</section>
-			<section data-auto-animate data-transition="none">
-				<img style="" src="resources/Overview.png" />
-				<div data-id="cover_mip"
-					style="position: fixed; z-index:1; background-color: white; width: 180px; height: 230px; top: 200px; left: 50px;">
-				</div>
-				<div data-id="cover_var"
-					style="position: fixed; z-index:1; background-color: white; width: 400px; height: 50px; top: 370px; left: 50px;">
-				</div>
-				<div data-id="cover_backarrow"
-					style="position: fixed; z-index:1; background-color: white; width: 1500px; height: 75px; top: 380px; left: 50px;">
-				</div>
-				<div data-id="MIP-text"
-					style="font-size: 70px; position: fixed; z-index:2; background-color: white; width: 90px; height: 100px; top: 250px; left: 100px; color: black">
-					MIP
-				</div>
-				<div data-id="crop_bottom"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 2000px; height: 100px; top: 600px; left: 0px;">
-				</div>
-				<div data-id="cover_flow"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 500px; height: 700px; top: 0px; left: 1410px;">
-				</div>
-			</section>
-			<section data-auto-animate data-transition="none">
-				<img style="" src="resources/Overview.png" />
-				<div data-id="cover_mip"
-					style="position: fixed; z-index:1; background-color: white; width: 180px; height: 230px; top: 200px; left: 50px;">
-				</div>
-				<div data-id="cover_var"
-					style="position: fixed; z-index:1; background-color: white; width: 400px; height: 50px; top: 370px; left: 50px;">
-				</div>
-				<div data-id="MIP-text"
-					style="font-size: 70px; position: fixed; z-index:2; background-color: white; width: 90px; height: 100px; top: 250px; left: 100px; color: black">
-					MIP
-				</div>
-				<div data-id="crop_bottom"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 2000px; height: 100px; top: 600px; left: 0px;">
-				</div>
-				<div data-id="cover_flow"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 500px; height: 700px; top: 0px; left: 1410px;">
-				</div>
-			</section>
-			<section data-auto-animate data-transition="none">
-				<img style="" src="resources/Overview.png" />
-				<div data-id="cover_mip"
-					style="position: fixed; z-index:1; background-color: white; width: 180px; height: 230px; top: 200px; left: 50px;">
-				</div>
-				<div data-id="cover_var"
-					style="position: fixed; z-index:1; background-color: white; width: 400px; height: 50px; top: 370px; left: 50px;">
-				</div>
-				<div data-id="MIP-text"
-					style="font-size: 70px; position: fixed; z-index:2; background-color: white; width: 90px; height: 100px; top: 250px; left: 100px; color: black">
-					MIP
-				</div>
-				<div data-id="crop_bottom"
-					style="position: fixed; z-index:2; background-color: var(--r-background-color); width: 2000px; height: 100px; top: 600px; left: 0px;">
-				</div>
+				<ul>
+					<li>Developed a learning based heuristic</li>
+					<li class="fragment">Utilizing Graph Neural Networks</li>
+					<li class="fragment">Able to outperform other MIP-Solvers</li>
+					<li class="fragment">... but sometimes fails to outperform RNS</li>
+				</ul>
 			</section>
 
-			<section data-auto-animate data-transition="none" data-auto-animate-id="hamming-dist">
-				<p data-id="title" style="font-size: 50px;"><b>HAMMING DISTANCE</b> ($\eta$)</p>
-			</section>
-			<section data-auto-animate data-transition="none" data-auto-animate-id="hamming-dist">
-				<p data-id="title" style="font-size: 50px;"><b>HAMMING DISTANCE</b> ($\eta$)</p>
-				<p>.. is the number of places a vector can change its value</p>
-			</section>
-			<section data-auto-animate data-transition="none" data-auto-animate-id="hamming-dist">
-				<p style="font-size: 50px;"><b>HAMMING DISTANCE</b> ($\eta$)</p>
-				<img src="./resources/Hamming Distance.svg">
-			</section>
-			<section data-transition="none" data-auto-animate-id="hamming-dist">
-				<p style="font-size: 50px;"><b>HAMMING DISTANCE</b> ($\eta$)</p>
-				<img height="500" src="./resources/Hamming Distance (1).svg">
-			</section>
-			<section data-transition="none" data-auto-animate-id="hamming-dist">
-				<p style="font-size: 50px;"><b>HAMMING DISTANCE</b> ($\eta$)</p>
-				<img height="700" src="./resources/Hamming Distance (2).svg">
-			</section>
 		</div>
 	</div>
 
